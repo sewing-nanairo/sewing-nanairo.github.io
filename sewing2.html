@@ -23,22 +23,14 @@
 
 
 <div id="contents">
-
-<main>
-
-<img src="images/kodomo.png" alt="説明文"
+<img id="responsiveImage" src="images/kodomo.png" alt="説明文"
      style="display: block; margin: 20px auto; width: 100%; max-width: 1000px; height: auto; border-radius: 8px;">
-
-
-<br>
-
 </div>
 
 
 
 </section>
 
-</main>
 
 <section id="footer">
 
@@ -50,6 +42,7 @@
 <li class="color-theme"><a>メニュー</a></li>
 <li><a href="index.html">ホーム</a></li>
 <li><a href="staff.html">講師紹介</a></li>
+<li><a href="works.html">生徒さん作品紹介</a></li>
 <li><a href="access.html">アクセス</a></li>
 <li><a href="faq.html">よく頂く質問</a></li>
 </ul>
@@ -73,6 +66,7 @@
 <ul>
 <li><a href="index.html">ホーム<span>Home</span></a></li>
 <li><a href="staff.html">講師紹介<span>Staff</span></a></li>
+<li><a href="works.html">生徒さん作品紹介<span>Student Works</span></a></li>
 <li><a href="access.html">アクセス<span>Access</span></a></li>
 <li><a href="faq.html">よく頂く質問<span>Faq</span></a></li>
 </ul>
@@ -93,6 +87,27 @@
 <!--パララックス（inview）-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
 <script src="js/jquery.inview_set.js"></script>
+
+<script>
+    // 初期状態で画面幅を確認してテキストを変更
+    function updateText() {
+        const imgElement = document.getElementById('responsiveImage');
+        if (window.innerWidth <= 768) { // 画面幅が768px以下の場合
+            imgElement.style = "display: block; margin: 20px auto; width: 100%; max-width: 1000px; height: auto; border-radius: 8px;";
+
+        } else {
+            imgElement.style = "display: block; margin: 20px auto; width: 50%; max-width: 1000px; height: auto; border-radius: 8px;";
+        }
+    }
+
+    // ページ読み込み時に実行
+    updateText();
+
+    // 画面サイズ変更時にもテキストを更新
+    window.addEventListener('resize', updateText);
+
+
+</script>
 
 </body>
 </html>

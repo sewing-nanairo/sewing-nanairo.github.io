@@ -23,22 +23,14 @@
 
 
 <div id="contents">
-
-<main>
-
-<img src="images/otona.png" alt="説明文"
+<img id="responsiveImage" src="images/otona.png" alt="説明文"
      style="display: block; margin: 20px auto; width: 100%; max-width: 1000px; height: auto; border-radius: 8px;">
-
-
-<br>
-
 </div>
 
 
 
 </section>
 
-</main>
 
 <section id="footer">
 
@@ -95,6 +87,27 @@
 <!--パララックス（inview）-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
 <script src="js/jquery.inview_set.js"></script>
+
+<script>
+    // 初期状態で画面幅を確認してテキストを変更
+    function updateText() {
+        const imgElement = document.getElementById('responsiveImage');
+        if (window.innerWidth <= 768) { // 画面幅が768px以下の場合
+            imgElement.style = "display: block; margin: 20px auto; width: 100%; max-width: 1000px; height: auto; border-radius: 8px;";
+
+        } else {
+            imgElement.style = "display: block; margin: 20px auto; width: 50%; max-width: 1000px; height: auto; border-radius: 8px;";
+        }
+    }
+
+    // ページ読み込み時に実行
+    updateText();
+
+    // 画面サイズ変更時にもテキストを更新
+    window.addEventListener('resize', updateText);
+
+
+</script>
 
 </body>
 </html>
